@@ -1,0 +1,69 @@
+available databases [6]:
+[*] information_schema
+[*] mysql
+[*] performance_schema
+[*] phpmyadmin
+[*] social
+[*] sys
+
+Database: social		
+[8 tables]
++-----------------+
+| comments        |
+| friend_requests |
+| likes           |
+| messages        |
+| notifications   |
+| posts           |
+| trends          |
+| users           |
++-----------------+
+
+Table: users
+[10 entries]
++------------------------+
+| email                  |
++------------------------+
+| admin@gmail.com        |
+| bigman@shefesh.com     |
+| felixnav@shefesh.com   |
+| jayfkay@shefesh.com    |
+| john@keepingit.online  |
+| mailman@shefesh.com    |
+| mmtoe@shefesh.com      |
+| mrsclaus@shefesh.com   |
+| notty@shefesh.com      |
+| terminator@shefesh.com |
++------------------------+
+
+Table: messages
+[8 columns]
++-----------+-------------+
+| Column    | Type        |
++-----------+-------------+
+| date      | datetime    |
+| body      | text        |
+| deleted   | varchar(3)  |
+| id        | int(11)     |
+| opened    | varchar(3)  |
+| user_from | varchar(50) |
+| user_to   | varchar(50) |
+| viewed    | varchar(3)  |
++-----------+-------------+
+
+Table: users
+[10 entries]
++---------------------------------------------+
+| password                                    |
++---------------------------------------------+
+| 15bc4f3ba871b2fa651363dcddfb27d9            |
+| 402223cb4df4c5050a38043d38b1372b            |
+| 57e9eb182943223b0b4e7f17c5e4cb6e            |
+| 6aff5ae0718de8945a3f71ba4d1ca76f            |
+| 78a6d0e6c73a29ef6d07d56f32f67b30            |
+| a60c0662c54bde0301d9aa2ad86203df            |
+| aa4e356d1509f1c1f53e0191601cde72            |
+| bc808149a93bc7050c3c6c4b7a5a0c97            |
+| e19d5cd5af0378da05f63f891c7467af (abcd1234) |
+| f1267830a78c0b59acc06b05694b2e28 \\santa's  |
++---------------------------------------------+

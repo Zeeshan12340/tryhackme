@@ -1,0 +1,545 @@
+commit cfc14d599b9b3cf24f909f66b5123ee0bbccc8da
+Author: lone <lone@pylon.thm>
+Date:   Sat Jan 30 02:47:00 2021 +0000
+
+    Initial commit!
+
+diff --git a/README.txt b/README.txt
+new file mode 100644
+index 0000000..45e699d
+--- /dev/null
++++ b/README.txt
+@@ -0,0 +1,29 @@
++                  /
++      __         /       __    __
++    /   ) /   / /      /   ) /   )
++   /___/ (___/ /____/ (___/ /   /
++  /         /
++ /      (_ /  pyLon Password Manager
++                   by LeonM
++
++
++This program was designed to run in a terminal, it should run in IDLE
++but may not function fully as intended, for example the encryption key
++will not be hidden in IDLE as you type.
++
++the database is created in the current working directory not the directory
++of the program, so run it from where you want the database stored.
++
++to run:
++
++windows:
++c:\CWD> c:\path\to\python.exe pyLon_pwMan.py
++
++linux:
++~\pyLon$ python3 pyLon_pwMan.py
++
++To use the copy to clipboard function in linux you must install xclip
++
++$ sudo apt install xclip
++
++That is all, please enjoy this app.
+\ No newline at end of file
+diff --git a/banner.b64 b/banner.b64
+new file mode 100644
+index 0000000..c7287b0
+--- /dev/null
++++ b/banner.b64
+@@ -0,0 +1 @@
++ICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgIC8gICAgICAgICAgICAgICAKICAgICAgX18gICAgICAgICAvICAgICAgIF9fICAgIF9fCiAgICAvICAgKSAvICAgLyAvICAgICAgLyAgICkgLyAgICkKICAgL19fXy8gKF9fXy8gL19fX18vIChfX18vIC8gICAvCiAgLyAgICAgICAgIC8gICAgICAgICAgICAgICAgICAgICAKIC8gICAgICAoXyAvICBweUxvbiBQYXNzd29yZCBNYW5hZ2VyCiAgICAgICAgICAgICAgICAgICBieSBMZW9uTQo=
+\ No newline at end of file
+diff --git a/pyLon.db b/pyLon.db
+new file mode 100644
+index 0000000..68d04e0
+Binary files /dev/null and b/pyLon.db differ
+diff --git a/pyLon_crypt.py b/pyLon_crypt.py
+new file mode 100644
+index 0000000..3b90c1d
+--- /dev/null
++++ b/pyLon_crypt.py
+@@ -0,0 +1,52 @@
++from hashlib import md5
++from binascii import hexlify, unhexlify
++from random import shuffle, randint
++
++
++class XorCrypt:
++
++    """ homebrew XOR Encryption for 16 byte passwords
++        I don't know how strong this is, it is theoretically sound.
++        it's a single round XOR encryption, with the md5 of the passphrase.
++        md5 as hex just happens to be the same length as a 16 char password
++        it should be secure enough to stop honest thieves,
++        please try and break it and let me know.
++        NOTE: to future self, multiple rounds could XOR it again after
++        jumbling the bytes in an order determined by the passphrase.
++    """
++
++    def __init__(self):
++        self.__passphrase = b""
++
++    def set_passphrase(self, passphrase: bytes):
++        """ setter method for the passphrase """
++        if type(passphrase) == bytes:
++            self.__passphrase = passphrase
++
++    def encrypt_password(self, plain_text: str):
++        """ encryption method for passwords """
++        passphrase_integer = int(md5(self.__passphrase).hexdigest(), 16)
++        plain_integer = int(hexlify(bytes(plain_text, "utf8")), 16)
++        return hex(passphrase_integer ^ plain_integer)[2:]  # the hex string without the 0x
++
++    def decrypt_password(self, cypher_text: str):
++        """ decryption method for password """
++        passphrase_integer = int(md5(self.__passphrase).hexdigest(), 16)
++        encrypted_integer = int(cypher_text, 16)
++        plain_text = str(unhexlify(hex(passphrase_integer ^ encrypted_integer)[2:]), "utf8")
++        return plain_text
++
++    def generate_password(self):  # generates a 16 char pseudo random password
++        """ password generator for 16 byte password's """
++        keys = [list("abcdefghijklmnopqrstuvwzyz"), list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
++                list("0123456789"), list(r"`~!@#$%^&*()_+-={}[];:,.<>?")]
++        mixture = [5, 5, 3, 3]  # 5 lower, 5 upper, 3 numeric, 3 special
++        for c in range(len(keys)):  # randomise the lists above ^
++            shuffle(keys[c])
++        password = []  # empty list
++        for c, i in enumerate(mixture):  # count, item
++            for _ in range(i):
++                password.append(keys[c][randint(0, len(keys[c]) - 1)])
++        shuffle(password)  # should be fairly random at this point
++        password = "".join(password)  # concatenate a list to string
++        return password, self.encrypt_password(password)  # return both the plain password and the cypher text
+diff --git a/pyLon_db.py b/pyLon_db.py
+new file mode 100644
+index 0000000..c6e6d6f
+--- /dev/null
++++ b/pyLon_db.py
+@@ -0,0 +1,106 @@
++import sqlite3
++
++
++class Database:
++
++    """ Creates a database instance - Simplifies database operations
++        I wrote most of this so it can be reused in future projects. """
++
++    def __init__(self, db_file: str):
++        self.__db_file = db_file
++        self.__db_conn = self.__connect_db()
++
++    def __connect_db(self):
++
++        """ Private Method: Opens the database file. """
++
++        try:
++            db_conn = sqlite3.connect(self.__db_file)
++        except sqlite3.Error as error:  # unlikely but we need to handle this just in case
++            print("[!] Database connection failed!")
++            print("[!] ", error)
++            return
++        print("[*] Database connection success!")
++        print("[*] SQLite version", sqlite3.version)
++        return db_conn
++
++    def __cursor(self, statement: str, fetch=False):
++
++        """ Private Method: Open's and closes the cursor """
++
++        cursor = self.__db_conn.cursor()
++        cursor.execute(statement)
++        if fetch:
++            rows = cursor.fetchall()
++            cursor.close()
++            return rows
++        cursor.close()
++
++    def db_close(self):
++        self.__db_conn.close()
++        print("[*] Database closed cleanly.")
++
++    def create_table(self, table_name: str, columns: dict):
++
++        """ Create a table in the database """
++
++        columns = "".join([f"{i} {columns[i]}," for i in columns]).rstrip(",")
++        sql_statement = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns});"
++        try:
++            self.__cursor(sql_statement)
++            self.__db_conn.commit()
++        except sqlite3.Error as error:
++            print("[!] Creating table failed!")
++            print("[!]", str(error).capitalize())
++            return
++        print(f"[*] Created table {table_name} successfully.")
++
++    def insert_row(self, table: str, row_data: dict):
++
++        """ Insert a row into defined table """
++
++        columns = "".join([f"'{i}'," for i in row_data]).rstrip(",")
++        keys = "".join([f"'{row_data[i]}'," for i in row_data]).rstrip(",")
++        sql_statement = f"INSERT INTO {table} ({columns}) VALUES({keys});"
++        try:
++            self.__cursor(sql_statement)
++            self.__db_conn.commit()
++        except sqlite3.Error as error:
++            print("[!] Couldn't add record")
++            print("[!]", str(error).capitalize())
++            return
++        print("[*] Record added successfully.")
++
++    def delete_rowid(self, table: str, rowid: str):
++
++        """ Delete rowid from table """
++
++        sql_statement = f"DELETE FROM {table} WHERE rowid = {rowid};"
++        try:
++            self.__cursor(sql_statement)
++            self.__db_conn.commit()
++            self.__cursor("VACUUM;")  # consolidate rowid's
++            self.__db_conn.commit()
++        except sqlite3.Error as error:
++            print("[!] Couldn't delete record.")
++            print("[!]", str(error).capitalize())
++        print("[*] Record deleted successfully.")
++
++    def select_rows(self, table: str, column: str, where_like: tuple = None, or_like: tuple = None):
++
++        """ issues the following statement to the SQLite db items in brackets are optional
++
++            SELECT column FROM table (WHERE key like '%search_string%')
++                                        ( OR key like '%search_string%') """
++
++        sql_statement = f"SELECT {column} FROM {table}"
++        if where_like:  # if parameter passed execute this
++            sql_statement += f" WHERE {where_like[0]} like '%{where_like[1]}%'"
++        if where_like and or_like:  # must have a where like to have an or like
++            sql_statement += f" OR {or_like[0]} like '%{or_like[1]}%'"
++        sql_statement += ";"  # add the statement closer thingo
++        try:
++            rows = self.__cursor(sql_statement, fetch=True)
++            return rows
++        except sqlite3.Error as error:
++            print("[!]", str(error).capitalize())
+diff --git a/pyLon_pwMan.py b/pyLon_pwMan.py
+new file mode 100644
+index 0000000..08527be
+--- /dev/null
++++ b/pyLon_pwMan.py
+@@ -0,0 +1,315 @@
++import pyLon_db
++import pyLon_crypt
++import os
++from time import sleep
++from base64 import b64decode
++from getpass import getpass
++from hashlib import sha512
++
++db_file = "pyLon.db"
++banner_file = "banner.b64"
++banner = str(b64decode(open(banner_file, "r").read()), "utf8")  # the all important magic
++
++
++def print_banner():
++
++    """ Clears the screen, makes magical faeries appear. """
++
++    clear_screen()
++    print(banner)
++
++
++def clear_screen():
++
++    """ Function to clear the screen. works in linux and windows"""
++
++    if os.name == "nt":
++        os.system("cls")
++    else:
++        os.system("clear")
++
++
++def copy_to_clipboard(word):
++
++    """ Function to put the password in the clipboard """
++
++    if os.name == "nt":
++        os.system(f"echo|set /p=\"{word}\"|clip")
++    elif os.name == "posix":
++        if os.path.exists("/usr/bin/xclip"):
++            os.system(f"echo -n \"{word}\" | /usr/bin/xclip -selection clipboard")
++        else:
++            print("\n[*] Install xclip to copy to clipboard.")
++            print("[*] sudo apt install xclip")
++            sleep(5)
++    print("\n[*] Password copied to the clipboard.")
++
++
++def quit_program(immediate=False):
++
++    """ Does what it says on the tin. """
++
++    def bye():
++        print_banner()
++        db.db_close()
++        sleep(1)
++        quit()
++    if immediate:
++        bye()
++    print_banner()
++    if user_prompt_bool("[*] Quitting, are you sure?"):
++        bye()
++
++
++def user_prompt_bool(question: str):
++
++    """ Get a yes / no answer from user """
++
++    accept = list("yn")
++    print(question)
++    while True:
++        get_input = input("(Y)es or (N)o: ").lower()
++        if get_input in accept:
++            break
++    return True if get_input == "y" else False
++
++
++def user_multiple_choice(choices, term):
++
++    """ Gets a menu option from user """
++
++    while True:
++        choice = input(f"\nSelect a{term}: ").lower()
++        if choice in choices:
++            return choice
++        else:
++            if choice.lower() == "c":
++                main_menu()
++            continue
++
++
++def list_passwords(choose=False, search=None):
++
++    """ Lists passwords and optionally choose a password can also issue a search query."""
++
++    if search:  # may be vulnerable to sqli, but since its a local app im not concerned
++        rows = db.select_rows(table="pwMan", column="rowid,*",
++                              where_like=("site", search), or_like=("user", search))
++    else:
++        rows = db.select_rows(table="pwMan", column="rowid,*")
++
++    entries = [f"{x}" for x in range(1, len(rows) + 1)]  # make a list of rows returned
++
++    if entries:  # execute if at least 1 row was returned
++        print_banner()
++        hackery = lambda x: f"[{x}]"
++        print(" " * 9 + "SITE" + " " * 24 + "USERNAME")
++        for c, i in enumerate(rows):
++            print(f" {hackery(entries[c]):<6}  {i[1]:<28}{i[2]:<28}")
++        if choose:  # this seemed like the logical place to put this.
++            choice = user_multiple_choice(entries, " password [C] to cancel")
++            return choice, rows[int(choice) - 1]
++        else:
++            getpass("\nPress ENTER to continue.")
++    else:  # no rows were returned
++        print_banner()
++        print("[*] No entries found.")
++        sleep(2)  # short delay so user can read message.
++
++
++def decrypt_password(row_data=None):
++
++    """ Call the decryption method from pyLon_crypt """
++
++    if not row_data:
++        row_data = list_passwords(choose=True)[1]
++    plain_password = crypt.decrypt_password(row_data[3])
++    print_banner()
++    print(f"""\
++    Password for {row_data[1]}
++
++        Username = {row_data[2]}
++        Password = {plain_password}\
++            """)
++    copy_to_clipboard(plain_password)
++    getpass("\nPress ENTER to continue.")
++
++
++def delete_password():
++
++    """ function to delete a password"""
++
++    rowid = list_passwords(choose=True)[1][0]
++    if user_prompt_bool("Are you sure?"):  # try to prevent accidental deletion
++        db.delete_rowid("pwMan", rowid)
++        sleep(2)
++
++
++def check_length(prompt: str):
++
++    """ Make sure the password is between 8 and 16 chars"""
++
++    while True:
++        user_input = input(prompt)
++        if 8 <= len(user_input) <= 16:  # first filter
++            return user_input
++        else:
++            print("[*] Password not acceptable length.")
++            if user_prompt_bool("Try again?"):
++                print_banner()
++                continue
++            else:
++                print("[*] Returning to main menu.")
++                sleep(2)
++                main_menu()
++
++
++def create_password():
++
++    """ Creates a new entry in the database """
++
++    print_banner()
++    site = input("Enter the site name for this password: ")
++    user = input("Enter the username for this site: ")
++    if user_prompt_bool("Do you wish to generate a random password?"):
++        password = crypt.generate_password()
++    else:
++        users_password = check_length("Please enter your password [8 - 16 chars]: ")
++        password = users_password, crypt.encrypt_password(users_password)
++    print_banner()
++    print(f"[*] Password for {site}\n")
++    print(f"        Username = {user}")
++    print(f"        Password = {password[0]}\n")
++    if user_prompt_bool("Do you wish to commit this to the database?"):
++        db.insert_row("pwMan", {"site": site, "user": user, "passwd": password[1]})
++        copy_to_clipboard(password[0])
++        sleep(2)
++    else:
++        print_banner()
++        print("[*] Returning to main menu.")
++        sleep(1)
++
++
++def search_password():
++    """ searches the database """
++    print_banner()
++    search_term = input("Please enter search term: ")
++    choice = list_passwords(search=search_term, choose=True)
++    decrypt_password(choice[1])
++
++
++def display_help():
++
++    """ Displays the help menu"""
++    print_banner()
++    print("""  
++    [1] This item lists all the passwords in the Database.
++    [2] This item lets you choose a password to display.
++    [3] This item lets you create a new password.
++    [4] This item lets you delete unwanted passwords.
++    [5] This item lets you search the username and site fields.
++    [6] This item displays this detailed help menu.
++    
++    """)
++    getpass("Press ENTER to continue.")
++
++
++def main_menu():
++
++    """ the centre of attention """
++
++    while True:
++        print_banner()
++        print("""  
++        [1] List passwords.
++        [2] Decrypt a password.
++        [3] Create new password.
++        [4] Delete a password.
++        [5] Search passwords.
++        [6] Display help menu
++        """)
++        user_input = user_multiple_choice(list("123456q"), "n option [Q] to Quit")
++        try:
++            if user_input.lower() == "q":
++                quit_program()
++            elif user_input == "1":
++                list_passwords()
++            elif user_input == "2":
++                decrypt_password()
++            elif user_input == "3":
++                create_password()
++            elif user_input == "4":
++                delete_password()
++            elif user_input == "5":
++                search_password()
++            elif user_input == "6":
++                display_help()
++        except TypeError:
++            continue
++
++
++def initialize():
++
++    """
++     Here we setup some variables etc for the program,
++     we put sha512 hash of passphrase into file, storing this is probably a weak point!
++     if the passphrase is easy enough, it can be easily brute forced, an alternative would be to
++     ask the user to manually verify decryption by decrypting a string known only to the user.
++     This however is more convenient, for the purposes of this assessment,
++     I'm sure it's sufficient, it all depends on the user choosing a strong passphrase.
++    """
++
++    print_banner()  # read the docstring
++    pw_hash = db.select_rows(table="pwCheck", column="pwHash")  # get the users hash from the db
++    if pw_hash:  # ok so columns were returned, that's handy
++        print("[*] Encryption key exists in database.")
++        encryption_key = bytes(getpass("\nEnter your encryption key: ", stream=None), "utf8")
++        if sha512(encryption_key).hexdigest() == pw_hash[0][0]:
++            print_banner()
++            crypt.set_passphrase(encryption_key)
++            print("[*] Encryption key correct.")
++            print("[*] Initialization complete.")
++            sleep(1)
++            main_menu()
++        else:
++            print_banner()
++            print("[!] Invalid encryption key.")
++            sleep(1)
++            if user_prompt_bool("Try again?"):
++                initialize()  # try initialize again
++            else:
++                return
++    else:
++        if user_prompt_bool("[!] Encryption key doesnt exist, want to create one?"):
++            while True:
++                print_banner()
++                encryption_key = bytes(getpass("Create your encryption key: ", stream=None), "utf8")
++                confirm = bytes(getpass("Confirm your encryption key: ", stream=None), "utf8")
++                if encryption_key != confirm:
++                    print("[!] Keys didn't match.")
++                    if user_prompt_bool("Try again?"):
++                        continue
++                    else:
++                        quit_program(immediate=True)
++                break
++            print_banner()
++            key_type = "VARCHAR NOT NULL"
++            db.create_table("pwCheck", {"pwhash": key_type})
++            db.create_table("pwMan", {"site": key_type, "user": key_type, "passwd": key_type})
++            db.insert_row("pwCheck", {"pwHash": sha512(encryption_key).hexdigest()})
++            crypt.set_passphrase(encryption_key)
++            print("[*] Initialization complete.")
++            sleep(3)
++            main_menu()
++
++
++# create instances of the classes used in this program.
++db = pyLon_db.Database(db_file)  # if it doesnt exist it will be created
++crypt = pyLon_crypt.XorCrypt()
++
++
++if __name__ == '__main__':  # entry into main program
++    try:
++        initialize()
++    except KeyboardInterrupt:  # close gracefully without error message when ctl-c used.
++        quit_program(immediate=True)

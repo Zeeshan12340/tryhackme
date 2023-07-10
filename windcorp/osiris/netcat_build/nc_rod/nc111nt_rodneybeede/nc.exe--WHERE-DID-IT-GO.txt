@@ -1,0 +1,14 @@
+False positives by anti-virus vendors and Google delete the nc.exe immediately.
+
+Their technology weekly relies on signatures.
+
+The original nc.exe I compiled removes the -e option making it useless for malware.
+
+There are likely now better tools than nc.exe you could use like socat or even powershell.
+
+If you still find it useful find compilation instructions here:
+
+https://www.rodneybeede.com/security/compile_netcat_on_windows_using_mingw.html
+
+
+	You can also find a new nc.exe that I compiled recently if you won't want to compile your own.

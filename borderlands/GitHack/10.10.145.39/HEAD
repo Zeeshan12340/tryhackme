@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 152b2d9976cd37a68fd462af8e4ce21356b5485e Context Information Security <recruitment@contextis.com> 1568122271 +0100	commit (initial): created repo
+152b2d9976cd37a68fd462af8e4ce21356b5485e 93bab0a450caaa8c4d2632703636eccc69062bb4 Context Information Security <recruitment@contextis.com> 1568122438 +0100	commit: added under construction page
+93bab0a450caaa8c4d2632703636eccc69062bb4 79c9539b6566b06d6dec2755fdf58f5f9ec8822f Context Information Security <recruitment@contextis.com> 1568122828 +0100	commit: added basic prototype of api gateway
+79c9539b6566b06d6dec2755fdf58f5f9ec8822f b2f776a52fe81a731c6c0fa896e7f9548aafceab Context Information Security <recruitment@contextis.com> 1568122860 +0100	commit: removed sensitive data
+b2f776a52fe81a731c6c0fa896e7f9548aafceab 04f1f411857cc972ae8ed5efcffa298f5f6168fb Context Information Security <recruitment@contextis.com> 1568122932 +0100	commit: added theme
+04f1f411857cc972ae8ed5efcffa298f5f6168fb fee5595bb2ba1d1ab005ec3de98367fe5d021e9f Context Information Security <recruitment@contextis.com> 1568123006 +0100	commit: added white paper pdf's
+fee5595bb2ba1d1ab005ec3de98367fe5d021e9f 6db3cf70b469de942f2f529166088cdfbbd5f764 Context Information Security <recruitment@contextis.com> 1568123071 +0100	commit: added mobile apk for beta testing.

@@ -1,0 +1,146 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-26 07:00 +12
+Stats: 0:00:46 elapsed; 0 hosts completed (1 up), 1 undergoing Traceroute
+Traceroute Timing: About 32.26% done; ETC: 07:01 (0:00:00 remaining)
+Stats: 0:01:54 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:02 (0:00:01 remaining)
+Stats: 0:01:55 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:02 (0:00:01 remaining)
+Stats: 0:01:55 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:02 (0:00:01 remaining)
+Stats: 0:02:13 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:01 remaining)
+Stats: 0:02:17 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:01 remaining)
+Stats: 0:03:08 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:08 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:08 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:03:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:03 (0:00:02 remaining)
+Stats: 0:04:11 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:05 (0:00:03 remaining)
+Stats: 0:04:12 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:05 (0:00:03 remaining)
+Stats: 0:04:12 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:05 (0:00:03 remaining)
+Stats: 0:04:12 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:05 (0:00:03 remaining)
+Stats: 0:04:12 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:05 (0:00:03 remaining)
+Stats: 0:04:13 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:05 (0:00:03 remaining)
+Stats: 0:04:13 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:05 (0:00:03 remaining)
+Stats: 0:05:53 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:06 (0:00:05 remaining)
+Stats: 0:05:54 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:06 (0:00:05 remaining)
+Stats: 0:05:55 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:06 (0:00:05 remaining)
+Stats: 0:05:55 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:06 (0:00:05 remaining)
+Stats: 0:05:56 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:06 (0:00:05 remaining)
+Stats: 0:05:56 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:06 (0:00:05 remaining)
+Stats: 0:05:56 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:06 (0:00:05 remaining)
+Stats: 0:05:56 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:06 (0:00:05 remaining)
+Stats: 0:07:04 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:07 (0:00:06 remaining)
+Stats: 0:07:04 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:07 (0:00:06 remaining)
+Stats: 0:07:04 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:07 (0:00:06 remaining)
+Stats: 0:07:05 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.53% done; ETC: 07:07 (0:00:06 remaining)
+Nmap scan report for 10.10.70.91
+Host is up (0.21s latency).
+Not shown: 997 closed ports
+PORT     STATE SERVICE       VERSION
+111/tcp  open  rpcbind       2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|_  100000  3,4          111/udp6  rpcbind
+8000/tcp open  http          SimpleHTTPServer 0.6 (Python 3.7.4)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: SimpleHTTP/0.6 Python/3.7.4
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| vulners: 
+|   cpe:/a:python:simplehttpserver:0.6: 
+|     	NODEJS:744	5.0	https://vulners.com/nodejs/NODEJS:744
+|_    	NODEJS:585	3.5	https://vulners.com/nodejs/NODEJS:585
+9200/tcp open  elasticsearch Elastic elasticsearch 6.4.2
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=9/26%OT=111%CT=1%CU=42422%PV=Y%DS=5%DC=T%G=Y%TM=614F75
+OS:F3%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=2%ISR=10C%TI=Z%CI=Z%II=I%TS=A)OP
+OS:S(O1=M506ST11NW7%O2=M506ST11NW7%O3=M506NNT11NW7%O4=M506ST11NW7%O5=M506ST
+OS:11NW7%O6=M506ST11)WIN(W1=68DF%W2=68DF%W3=68DF%W4=68DF%W5=68DF%W6=68DF)EC
+OS:N(R=Y%DF=Y%T=FF%W=6903%O=M506NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=FF%S=O%A=S+%F=
+OS:AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=FF%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(
+OS:R=Y%DF=Y%T=FF%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=FF%W=0%S=A%A=Z%
+OS:F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=FF%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N
+OS:%T=FF%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=FF%C
+OS:D=S)
+
+Network Distance: 5 hops
+
+TRACEROUTE (using port 143/tcp)
+HOP RTT       ADDRESS
+1   69.88 ms  10.17.0.1
+2   ... 4
+5   248.41 ms 10.10.70.91
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1044.63 seconds

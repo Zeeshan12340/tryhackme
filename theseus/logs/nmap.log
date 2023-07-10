@@ -1,0 +1,16 @@
+# Nmap 7.92 scan initiated Sun Jul 10 11:56:31 2022 as: nmap -p22,8080 -sCV -oN logs/nmap.log 10.10.95.128
+Nmap scan report for 10.10.95.128
+Host is up (0.31s latency).
+
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 87:c4:26:88:4f:42:ae:2c:74:8b:ff:66:2d:f0:68:9d (RSA)
+|   256 05:f5:06:fc:dc:86:f8:f2:ba:e2:ee:df:14:c3:3d:e4 (ECDSA)
+|_  256 92:74:cb:39:e1:ce:31:90:13:9d:4c:ee:27:f8:06:bc (ED25519)
+8080/tcp open  http    Werkzeug httpd 1.0.1 (Python 2.7.17)
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Jul 10 11:56:55 2022 -- 1 IP address (1 host up) scanned in 24.26 seconds

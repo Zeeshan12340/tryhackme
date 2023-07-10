@@ -1,0 +1,23 @@
+from ticket 2915
+cio wants to save money- asked us to move the wordpress site off the hosted.  I setup the same versions in the docker container with teh startup script. POC complete will wait on cio's office to test and see if acceptable
+-BWJ
+
+Ticket 3313
+software audit found this version downlevel, added script to make sure its latest
+-RLB
+
+Ticket 3622
+Quarterly password change completed
+-BWJ
+
+Ticket 4119
+Quarterly password change completed
+-BWJ
+
+Ticket 4322
+Auto update broke site, got a page.  Disabled updates for now. emailed Rick Bligh to warn him.  Emailed Bill Johnson to ask him to follow up with CIO's office and get this tested.  Going back to bed. 
+-RLP
+
+Ticket 4325
+Updates fixed, reeneabled. RLB isn't here anymore.  Talk to the CIO not me. 
+-BWJ

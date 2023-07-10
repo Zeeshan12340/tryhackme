@@ -1,0 +1,33 @@
+21/tcp   open  ftp:- anonymous login disabled
+22/tcp   open  ssh:- 5.9p1 
+80/tcp   open  http:-	generic website with pet photos, likely some file upload exploit
+443/tcp  open  https:-
+8000/tcp open  http-alt:- please put it at the end of the url (e.g. 52.30.202.66:8000/ID_HERE)
+8096/tcp  open  unknown:- Jellyfin portal
+22222/tcp open  ssh:- 7.6p1
+
+port 80,443:- 
+index.php
+content
+themes
+business(http basic auth,tried admin and robyn username bruteforce)
+assets
+plugins
+vendor
+config
+subdomains: 
+34.254.98.26    dev.robyns-petshop.thm
+34.254.98.26    beta.robyns-petshop.thm
+34.254.98.26    monitorr.robyns-petshop.thm
+
+
+tried ftp bruteforce with "robyn", doesn't work
+
+Nothing on ssh(22,22222), don't think bruteforcing is the way for login
+
+standard port 80,443 has a website with basic functionality, no user input taken or login forms found, interesting images directory found.
+page uses picocms, tried a few cves need to look more.
+
+port 8000 has another server which requires an "id" to give some functionality,not much here.
+
+port 8096:- tried a poc for jellyfin SSRF but doesn't work. only two cves found and both relatively low impact

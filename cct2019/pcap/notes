@@ -1,0 +1,16 @@
+irc packets have the followin data/creds
+CAP LS 302
+PASS RedRoverRedRover$$
+NICK zoobah
+USER binaryphalanx
+108AAAAAC :your unique ID
+
+dns has some interesting sites like fotoforensics.com (need to see associated packets)
+we get an image from fotoforensics, analysis id
+image comment: "Rar!..Ιs.ֽL֑e$.MV..'.?..ӻ..m.8A@^<.RsB6|l.@.$u�.@.n.,>Xuk !IU5.ֽL֑AA...|r�(.:Ӛ"
+
+image comment is an encrypted rar archive, rar2john gives hash, gives pass `torment` gives file "p.txt"
+springheeledjack
+
+movie password: BER5348833
+BER5348833

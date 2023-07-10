@@ -1,0 +1,7 @@
+replace cipher text "FSXL PXTH EKYT DJXS PYMO JLAY VPRP VO" with "JHSL PGLW YSQO DQVL PFAO TPCY KPUD TF"
+
+image comment has "JUSTAWARMUPRIGHT?"
+
+binwalk gives zip file, using above pass we get `fakeflag.txt`
+
+PW: Z10N0101

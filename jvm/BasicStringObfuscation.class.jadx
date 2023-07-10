@@ -1,0 +1,46 @@
+{
+  "projectVersion": 1,
+  "files": [
+    "BasicStringObfuscation.class"
+  ],
+  "treeExpansions": [
+    [
+      "Resources",
+      "BasicStringObfuscation.class"
+    ],
+    [
+      "Source code",
+      "BasicStringObfuscation.class"
+    ],
+    [
+      "defpackage",
+      "Source code",
+      "BasicStringObfuscation.class"
+    ],
+    [
+      "BasicStringObfuscation",
+      "defpackage",
+      "Source code",
+      "BasicStringObfuscation.class"
+    ]
+  ],
+  "codeData": {
+    "comments": [],
+    "renames": []
+  },
+  "openTabs": [
+    {
+      "type": "class",
+      "tabPath": "BasicStringObfuscation",
+      "subPath": "java",
+      "caret": 729,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "activeTab": 1,
+  "cacheDir": "BasicStringObfuscation.class.cache",
+  "enableLiveReload": false
+}

