@@ -1,0 +1,2 @@
+distinguishedName	lockOutObservationWindow	lockoutDuration	lockoutThreshold	maxPwdAge	minPwdAge	minPwdLength	pwdHistoryLength	pwdProperties	ms-DS-MachineAccountQuota
+DC=fusion,DC=corp	30.0 minutes	30.0 minutes	0	1000000000.00 days	0.00 days	10	24		10

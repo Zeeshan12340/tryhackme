@@ -1,0 +1,13 @@
+daven port			CTF PLAYER
+imogen royce			CTF PLAYER
+tamara vidal			CTF PLAYER
+arthur edwards			CTF PLAYER
+carl ingram			CTF PLAYER (INACTIVE)
+nolan cassidy			CTF PLAYER
+reza zaydan			CTF PLAYER
+ljudmila vetrova		CTF PLAYER, DEVELOPER,ACTIVE DIRECTORY ADMIN
+rico delgado			WEB SPECIALIST
+tyson williams			REVERSE ENGINEERING
+steven bradley			STEGO SPECIALIST
+chamber lin			CTF PLAYER(INACTIVE)
+

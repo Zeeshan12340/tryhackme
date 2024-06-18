@@ -1,0 +1,241 @@
+###################################################################################################
+                    [!][!][!] Welcome to SharpEDRChecker by @PwnDexter [!][!][!]
+[-][-][-] Not running as admin, some privileged metadata and processes may not be checked [-][-][-]
+###################################################################################################
+
+######################################
+[!][!][!] Checking processes [!][!][!]
+######################################
+
+[-] Suspicious process found:
+        Name: MsMpEng.exe
+        Description: MsMpEng.exe
+        Caption: MsMpEng.exe
+        Binary:
+        Process ID: 2272
+        Parent Process: 756
+        Process CmdLine:
+        File Metadata:
+[!] Matched on: msmpeng
+
+[-] Suspicious process found:
+        Name: SecurityHealthService.exe
+        Description: SecurityHealthService.exe
+        Caption: SecurityHealthService.exe
+        Binary:
+        Process ID: 3388
+        Parent Process: 756
+        Process CmdLine:
+        File Metadata:
+[!] Matched on: securityhealthservice
+
+###################################################################
+[!][!][!] Checking modules loaded in your current process [!][!][!]
+###################################################################
+
+[+] No suspicious modules found in your process
+
+########################################
+[!][!][!] Checking Directories [!][!][!]
+########################################
+
+[-] Suspicious directory found: C:\Program Files\Windows Defender
+[!] Matched on: defender
+
+[-] Suspicious directory found: C:\Program Files\Windows Defender Advanced Threat Protection
+[!] Matched on: defender, threat
+
+[-] Suspicious directory found: C:\Program Files\Wireshark
+[!] Matched on: wireshark
+
+[-] Suspicious directory found: C:\Program Files (x86)\Windows Defender
+[!] Matched on: defender
+
+#####################################
+[!][!][!] Checking Services [!][!][!]
+#####################################
+
+[-] Suspicious service found:
+        Name: mpssvc
+        DisplayName: Windows Defender Firewall
+        Description: Windows Defender Firewall helps protect your computer by preventing unauthorized users from gaining access to your computer through the Internet or a network.
+        Caption: Windows Defender Firewall
+        Binary: C:\Windows\system32\svchost.exe -k LocalServiceNoNetworkFirewall -p
+        Status: Running
+        Process ID: 1384
+        File Metadata:
+                 Product Name: Microsoftr Windowsr Operating System
+                 Filename: C:\Windows\system32\svchost.exe
+                 Original Filename: svchost.exe.mui
+                 Internal Name: svchost.exe
+                 Company Name: Microsoft Corporation
+                 File Description: Host Process for Windows Services
+                 Product Version: 10.0.17763.1
+                 Comments:
+                 Legal Copyright: c Microsoft Corporation. All rights reserved.
+                 Legal Trademarks:
+[!] Matched on: defender
+
+[-] Suspicious service found:
+        Name: PolicyAgent
+        DisplayName: IPsec Policy Agent
+        Description: Internet Protocol security (IPsec) supports network-level peer authentication, data origin authentication, data integrity, data confidentiality (encryption), and replay protection.  This service enforces IPsec policies created through the IP Security Policies snap-in or the command-line tool "netsh ipsec".  If you stop this service, you may experience network connectivity issues if your policy requires that connections use IPsec.  Also,remote management of Windows Defender Firewall is not available when this service is stopped.
+        Caption: IPsec Policy Agent
+        Binary: C:\Windows\system32\svchost.exe -k NetworkServiceNetworkRestricted -p
+        Status: Running
+        Process ID: 1880
+        File Metadata:
+                 Product Name: Microsoftr Windowsr Operating System
+                 Filename: C:\Windows\system32\svchost.exe
+                 Original Filename: svchost.exe.mui
+                 Internal Name: svchost.exe
+                 Company Name: Microsoft Corporation
+                 File Description: Host Process for Windows Services
+                 Product Version: 10.0.17763.1
+                 Comments:
+                 Legal Copyright: c Microsoft Corporation. All rights reserved.
+                 Legal Trademarks:
+[!] Matched on: defender
+
+[-] Suspicious service found:
+        Name: SecurityHealthService
+        DisplayName: Windows Security Service
+        Description: Windows Security Service handles unified device protection and health information
+        Caption: Windows Security Service
+        Binary: C:\Windows\system32\SecurityHealthService.exe
+        Status: Running
+        Process ID: 3388
+        File Metadata:
+                 Product Name: Microsoftr Windowsr Operating System
+                 Filename: C:\Windows\system32\SecurityHealthService.exe
+                 Original Filename: SecurityHealthService.exe
+                 Internal Name: SecurityHealthService
+                 Company Name: Microsoft Corporation
+                 File Description: Windows Security Health Service
+                 Product Version: 4.18.1807.16384
+                 Comments:
+                 Legal Copyright: c Microsoft Corporation. All rights reserved.
+                 Legal Trademarks:
+[!] Matched on: securityhealthservice
+
+[-] Suspicious service found:
+        Name: Sense
+        DisplayName: Windows Defender Advanced Threat Protection Service
+        Description: Windows Defender Advanced Threat Protection service helps protect against advanced threats by monitoring and reporting security events that happen on the computer.
+        Caption: Windows Defender Advanced Threat Protection Service
+        Binary: "C:\Program Files\Windows Defender Advanced Threat Protection\MsSense.exe"
+        Status: Stopped
+        Process ID: 0
+        File Metadata:
+                 Product Name: Microsoftr Windowsr Operating System
+                 Filename: C:\Program Files\Windows Defender Advanced Threat Protection\MsSense.exe
+                 Original Filename: MsSense.exe.mui
+                 Internal Name: MsSense.exe
+                 Company Name: Microsoft Corporation
+                 File Description: Windows Defender Advanced Threat Protection Service Executable
+                 Product Version: 10.7410.17763.1369
+                 Comments:
+                 Legal Copyright: c Microsoft Corporation. All rights reserved.
+                 Legal Trademarks:
+[!] Matched on: defender, threat
+
+[-] Suspicious service found:
+        Name: WdNisSvc
+        DisplayName: Windows Defender Antivirus Network Inspection Service
+        Description: Helps guard against intrusion attempts targeting known and newly discovered vulnerabilities in network protocols
+        Caption: Windows Defender Antivirus Network Inspection Service
+        Binary: "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2111.5-0\NisSrv.exe"
+        Status: Stopped
+        Process ID: 0
+        File Metadata:
+                 Product Name: Microsoftr Windowsr Operating System
+                 Filename: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2111.5-0\NisSrv.exe
+                 Original Filename: NisSrv.exe
+                 Internal Name: NisSrv.exe
+                 Company Name: Microsoft Corporation
+                 File Description: Microsoft Network Realtime Inspection Service
+                 Product Version: 4.18.2111.5
+                 Comments:
+                 Legal Copyright: c Microsoft Corporation. All rights reserved.
+                 Legal Trademarks:
+[!] Matched on: antivirus, defender, nissrv
+
+[-] Suspicious service found:
+        Name: WinDefend
+        DisplayName: Windows Defender Antivirus Service
+        Description: Helps protect users from malware and other potentially unwanted software
+        Caption: Windows Defender Antivirus Service
+        Binary: "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2111.5-0\MsMpEng.exe"
+        Status: Running
+        Process ID: 2272
+        File Metadata:
+                 Product Name: Microsoftr Windowsr Operating System
+                 Filename: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2111.5-0\MsMpEng.exe
+                 Original Filename: MsMpEng.exe
+                 Internal Name: MsMpEng.exe
+                 Company Name: Microsoft Corporation
+                 File Description: Antimalware Service Executable
+                 Product Version: 4.18.2111.5
+                 Comments:
+                 Legal Copyright: c Microsoft Corporation. All rights reserved.
+                 Legal Trademarks:
+[!] Matched on: antimalware, antivirus, defender, malware, msmpeng
+
+####################################
+[!][!][!] Checking drivers [!][!][!]
+####################################
+
+[-] Suspicious driver found:
+        Suspicious Module: WdFilter.sys
+        File Metadata:
+                 Product Name: Microsoftr Windowsr Operating System
+                 Filename: c:\windows\system32\drivers\wd\wdfilter.sys
+                 Original Filename: WdFilter.sys
+                 Internal Name: WdFilter
+                 Company Name: Microsoft Corporation
+                 File Description: Microsoft antimalware file system filter driver
+                 Product Version: 4.18.2111.5
+                 Comments:
+                 Legal Copyright: c Microsoft Corporation. All rights reserved.
+                 Legal Trademarks:
+[!] Matched on: antimalware, malware
+
+[!] Could not get file info for: c:\Windows\Sysnative\drivers\dump_diskdump.sys
+
+[!] Could not get file info for: c:\Windows\Sysnative\drivers\dump_xenvbd.sys
+
+[!] Could not get file info for: c:\Windows\Sysnative\drivers\dump_xencrsh.sys
+
+################################
+[!][!][!] TLDR Summary [!][!][!]
+################################
+
+[!] Process Summary:
+        [-] MsMpEng.exe : msmpeng
+        [-] SecurityHealthService.exe : securityhealthservice
+
+
+[+] No suspicious modules found in your process
+
+[!] Directory Summary:
+        [-] C:\Program Files\Windows Defender : defender
+        [-] C:\Program Files\Windows Defender Advanced Threat Protection : defender, threat
+        [-] C:\Program Files\Wireshark : wireshark
+        [-] C:\Program Files (x86)\Windows Defender : defender
+
+
+[!] Service Summary:
+        [-] mpssvc : defender
+        [-] PolicyAgent : defender
+        [-] SecurityHealthService : securityhealthservice
+        [-] Sense : defender, threat
+        [-] WdNisSvc : antivirus, defender, nissrv
+        [-] WinDefend : antimalware, antivirus, defender, malware, msmpeng
+
+
+[!] Driver Summary:
+        [-] WdFilter.sys : antimalware, malware
+
+#######################################
+[!][!][!] EDR Checks Complete [!][!][!]
+#######################################

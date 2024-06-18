@@ -1,0 +1,10 @@
+r = 2.5 in = 0.0635 m
+w = 7500 rpm = 785.398163 rad/s
+v = r*w = 49.872265 m/s
+
+torque = radius * Force
+where F = Power/velocity for circular disks
+assume power = 45 W or 45 J/s
+torque = 0.0635*(45/49.872265)
+
+total torque = 0.05729637504 N/m

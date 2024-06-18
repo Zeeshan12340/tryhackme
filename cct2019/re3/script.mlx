@@ -1,0 +1,27 @@
+for i=0:711
+	v1 = i;
+	if v1 < 100
+		continue
+    end
+	for j=0:711
+		v2 = j;
+		if v2 < 100
+			continue
+        end
+		for k=0:711
+			v3 = k;
+			if v3 < 100
+				continue
+            end
+			for l=0:711
+				v4 = l;
+				if v4 < 100
+					continue
+                end
+				if (v1 + v2 + v3 + v4 == 711 &&  v1* v2 *v3 *v4==711000000)
+					fprintf('numbers are %d %d %d %d \n',v1,v2, v3,v4)
+                end
+                end
+            end
+    end
+end

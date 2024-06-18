@@ -1,0 +1,27 @@
+(dp0
+S'Club'
+p1
+(lp2
+S'Manchester United'
+p3
+aS'PSG'
+p4
+aS'Real Madrid'
+p5
+aS'Atletico Madrid'
+p6
+ag4
+asS'Name'
+p7
+(lp8
+S'Cristiano Ronaldo'
+p9
+aS'Lionel Messi'
+p10
+aS'Eden Hazard'
+p11
+aS'Luis Suarez'
+p12
+aS'Neymar'
+p13
+as.

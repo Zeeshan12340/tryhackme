@@ -1,0 +1,56 @@
+# Nmap 7.92 scan initiated Mon May 30 14:01:23 2022 as: nmap -p 80,139,443,445,3306,3389,47001 -sCV -oN TryHackMe/yearof/yoto/nmap.log 10.10.184.243
+Nmap scan report for 10.10.184.243
+Host is up (0.20s latency).
+
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Apache httpd 2.4.46 ((Win64) OpenSSL/1.1.1g PHP/7.4.10)
+|_http-server-header: Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.4.10
+|_http-title: Year of the Owl
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+443/tcp   open  ssl/http      Apache httpd 2.4.46 ((Win64) OpenSSL/1.1.1g PHP/7.4.10)
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=localhost
+| Not valid before: 2009-11-10T23:48:47
+|_Not valid after:  2019-11-08T23:48:47
+|_http-server-header: Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.4.10
+|_http-title: Year of the Owl
+|_ssl-date: TLS randomness does not represent time
+445/tcp   open  microsoft-ds?
+3306/tcp  open  mysql?
+| fingerprint-strings: 
+|   NULL: 
+|_    Host 'ip-10-17-17-11.eu-west-1.compute.internal' is not allowed to connect to this MariaDB server
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+|_ssl-date: 2022-05-30T09:02:26+00:00; 0s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: YEAR-OF-THE-OWL
+|   NetBIOS_Domain_Name: YEAR-OF-THE-OWL
+|   NetBIOS_Computer_Name: YEAR-OF-THE-OWL
+|   DNS_Domain_Name: year-of-the-owl
+|   DNS_Computer_Name: year-of-the-owl
+|   Product_Version: 10.0.17763
+|_  System_Time: 2022-05-30T09:01:45+00:00
+| ssl-cert: Subject: commonName=year-of-the-owl
+| Not valid before: 2022-05-29T08:45:19
+|_Not valid after:  2022-11-28T08:45:19
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port3306-TCP:V=7.92%I=7%D=5/30%Time=629487E6%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,68,"d\0\0\x01\xffj\x04Host\x20'ip-10-17-17-11\.eu-west-1\.compute\.i
+SF:nternal'\x20is\x20not\x20allowed\x20to\x20connect\x20to\x20this\x20Mari
+SF:aDB\x20server");
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2022-05-30T09:01:46
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon May 30 14:02:28 2022 -- 1 IP address (1 host up) scanned in 64.52 seconds

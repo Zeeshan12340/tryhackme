@@ -1,0 +1,7 @@
+input: input.jar
+output: output.jar
+transformers:
+  - [fully-qualified-name-of-transformer]
+  - [fully-qualified-name-of-transformer]
+  - [fully-qualified-name-of-transformer]
+  - ... etc

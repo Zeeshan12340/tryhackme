@@ -1,0 +1,88 @@
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+socket
+exit
+htons
+connect
+inet_ntop
+puts
+__stack_chk_fail
+select
+printf
+calloc
+strlen
+__errno_location
+read
+memcpy
+strcat
+gethostbyname
+close
+sleep
+__cxa_finalize
+strerror
+__libc_start_main
+write
+free
+GLIBC_2.14
+GLIBC_2.4
+GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+u3UH
+No such H
+host
+dH34%(
+Server cH
+losed thH
+e connecH
+tion
+Failed tH
+o callocH
+ membuffH
+dH34%(
+gf1j7_n_H
+r6_bg_g0H
+t_f4u_reH
+3ug_qe@mH
+1j_c@pc_H
+n_f'f
+PRIVMSG H
+#flag :CH
+[]A\A]A^A_
+irc.cct
+ERROR %s
+Failed to get ip
+Found the server at %s
+Connected to my server!
+CAP LS 302
+USER cct2019 cct2019 irc.cct :realname
+NICK cct
+JOIN #flag
+;*3$"
+GCC: (GNU) 9.1.0
+.shstrtab
+.interp
+.note.gnu.build-id
+.note.ABI-tag
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.dynamic
+.got
+.got.plt
+.data
+.bss
+.comment

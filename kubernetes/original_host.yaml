@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: host
+spec:
+  containers:
+  - image: docker.io/vulhub/php:8.1-backdoor
+    name: host
+    command: [ "/bin/sh", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+    volumeMounts:
+    - mountPath: /host
+      name: host
+  volumes:
+  - name: host
+    hostPath:
+      path: /
+      type: Directory
