@@ -1,0 +1,397 @@
+{
+  "nodes": [
+    {
+      "id": 881,
+      "type": "User",
+      "label": "KRBTGT@CORP.THERESERVE.LOC",
+      "props": {
+        "sidhistory": {},
+        "description": "Key Distribution Center Service Account",
+        "unconstraineddelegation": false,
+        "pwdneverexpires": true,
+        "enabled": false,
+        "hasspn": true,
+        "trustedtoauth": false,
+        "admincount": true,
+        "whencreated": 1662584288,
+        "serviceprincipalnames": {
+          "0": "kadmin/changepw"
+        },
+        "lastlogontimestamp": -1,
+        "highvalue": false,
+        "passwordnotreqd": false,
+        "sensitive": false,
+        "domainsid": "S-1-5-21-170228521-1485475711-3199862024",
+        "samaccountname": "krbtgt",
+        "owned": false,
+        "pwdlastset": 1662584288,
+        "domain": "CORP.THERESERVE.LOC",
+        "lastlogon": 0,
+        "name": "KRBTGT@CORP.THERESERVE.LOC",
+        "distinguishedname": "CN=KRBTGT,CN=USERS,DC=CORP,DC=THERESERVE,DC=LOC",
+        "objectid": "S-1-5-21-170228521-1485475711-3199862024-502",
+        "dontreqpreauth": false
+      },
+      "glyphs": {},
+      "folded": {
+        "nodes": {},
+        "edges": {}
+      },
+      "x": 649.2403789224053,
+      "y": 299.9396098867481,
+      "objectid": "S-1-5-21-170228521-1485475711-3199862024-502",
+      "notowned": true,
+      "highvalue": false,
+      "type_user": true,
+      "size": 1,
+      "degree": 0,
+      "icon": {
+        "font": "'Font Awesome 5 Free'",
+        "content": "",
+        "scale": 1.5,
+        "color": "#17E625"
+      },
+      "fa2_x": -1.5186976194381714,
+      "fa2_y": -1.755914568901062,
+      "dn_x": null,
+      "dn_y": null,
+      "dn_size": 19.289712886816485,
+      "dn": null
+    },
+    {
+      "id": 892,
+      "type": "User",
+      "label": "SVCBACKUPS@CORP.THERESERVE.LOC",
+      "props": {
+        "sidhistory": {},
+        "unconstraineddelegation": false,
+        "pwdneverexpires": true,
+        "enabled": true,
+        "hasspn": true,
+        "trustedtoauth": false,
+        "admincount": false,
+        "whencreated": 1676451959,
+        "serviceprincipalnames": {
+          "0": "cifs/svcBackups"
+        },
+        "lastlogontimestamp": 1676454004,
+        "highvalue": false,
+        "passwordnotreqd": false,
+        "sensitive": false,
+        "domainsid": "S-1-5-21-170228521-1485475711-3199862024",
+        "samaccountname": "svcBackups",
+        "owned": false,
+        "displayname": "svcBackups",
+        "pwdlastset": 1676451959,
+        "domain": "CORP.THERESERVE.LOC",
+        "lastlogon": 1676454139,
+        "name": "SVCBACKUPS@CORP.THERESERVE.LOC",
+        "distinguishedname": "CN=SVCBACKUPS,OU=SERVICES,DC=CORP,DC=THERESERVE,DC=LOC",
+        "objectid": "S-1-5-21-170228521-1485475711-3199862024-1983",
+        "dontreqpreauth": false
+      },
+      "glyphs": {},
+      "folded": {
+        "nodes": {},
+        "edges": {}
+      },
+      "x": 748.9085622360874,
+      "y": 327.18955421244124,
+      "objectid": "S-1-5-21-170228521-1485475711-3199862024-1983",
+      "notowned": true,
+      "highvalue": false,
+      "type_user": true,
+      "size": 1,
+      "degree": 0,
+      "icon": {
+        "font": "'Font Awesome 5 Free'",
+        "content": "",
+        "scale": 1.5,
+        "color": "#17E625"
+      },
+      "fa2_x": 2.6944708824157715,
+      "fa2_y": -0.06787930428981781,
+      "dn_x": null,
+      "dn_y": null,
+      "dn_size": 19.289712886816485,
+      "dn": null
+    },
+    {
+      "id": 893,
+      "type": "User",
+      "label": "SVCEDR@CORP.THERESERVE.LOC",
+      "props": {
+        "sidhistory": {},
+        "unconstraineddelegation": false,
+        "pwdneverexpires": true,
+        "enabled": true,
+        "hasspn": true,
+        "trustedtoauth": false,
+        "admincount": false,
+        "whencreated": 1676451981,
+        "serviceprincipalnames": {
+          "0": "http/svcEDR"
+        },
+        "lastlogontimestamp": -1,
+        "highvalue": false,
+        "passwordnotreqd": false,
+        "sensitive": false,
+        "domainsid": "S-1-5-21-170228521-1485475711-3199862024",
+        "samaccountname": "svcEDR",
+        "owned": false,
+        "displayname": "svcEDR",
+        "pwdlastset": 1676451981,
+        "domain": "CORP.THERESERVE.LOC",
+        "lastlogon": 0,
+        "name": "SVCEDR@CORP.THERESERVE.LOC",
+        "distinguishedname": "CN=SVCEDR,OU=SERVICES,DC=CORP,DC=THERESERVE,DC=LOC",
+        "objectid": "S-1-5-21-170228521-1485475711-3199862024-1984",
+        "dontreqpreauth": false
+      },
+      "glyphs": {},
+      "folded": {
+        "nodes": {},
+        "edges": {}
+      },
+      "x": 704.266879646199,
+      "y": 284.8633218045846,
+      "objectid": "S-1-5-21-170228521-1485475711-3199862024-1984",
+      "notowned": true,
+      "highvalue": false,
+      "type_user": true,
+      "size": 1,
+      "degree": 0,
+      "icon": {
+        "font": "'Font Awesome 5 Free'",
+        "content": "",
+        "scale": 1.5,
+        "color": "#17E625"
+      },
+      "fa2_x": 0.9034651517868042,
+      "fa2_y": -1.8872458934783936,
+      "dn_x": null,
+      "dn_y": null,
+      "dn_size": 19.289712886816485,
+      "dn": null
+    },
+    {
+      "id": 894,
+      "type": "User",
+      "label": "SVCSCANNING@CORP.THERESERVE.LOC",
+      "props": {
+        "sidhistory": {},
+        "unconstraineddelegation": false,
+        "pwdneverexpires": true,
+        "enabled": true,
+        "hasspn": true,
+        "trustedtoauth": false,
+        "admincount": false,
+        "whencreated": 1676452026,
+        "serviceprincipalnames": {
+          "0": "cifs/scvScanning"
+        },
+        "lastlogontimestamp": 1680224117,
+        "highvalue": false,
+        "passwordnotreqd": false,
+        "sensitive": false,
+        "domainsid": "S-1-5-21-170228521-1485475711-3199862024",
+        "samaccountname": "svcScanning",
+        "owned": false,
+        "displayname": "svcScanning",
+        "pwdlastset": 1676452026,
+        "domain": "CORP.THERESERVE.LOC",
+        "lastlogon": 0,
+        "name": "SVCSCANNING@CORP.THERESERVE.LOC",
+        "distinguishedname": "CN=SVCSCANNING,OU=SERVICES,DC=CORP,DC=THERESERVE,DC=LOC",
+        "objectid": "S-1-5-21-170228521-1485475711-3199862024-1986",
+        "dontreqpreauth": false
+      },
+      "glyphs": {},
+      "folded": {
+        "nodes": {},
+        "edges": {}
+      },
+      "x": 630.4729663557501,
+      "y": 355.8602940431686,
+      "objectid": "S-1-5-21-170228521-1485475711-3199862024-1986",
+      "notowned": true,
+      "highvalue": false,
+      "type_user": true,
+      "size": 1,
+      "degree": 0,
+      "icon": {
+        "font": "'Font Awesome 5 Free'",
+        "content": "",
+        "scale": 1.5,
+        "color": "#17E625"
+      },
+      "fa2_x": -2.457608699798584,
+      "fa2_y": 0.1956171840429306,
+      "dn_x": null,
+      "dn_y": null,
+      "dn_size": 19.289712886816485,
+      "dn": null
+    },
+    {
+      "id": 895,
+      "type": "User",
+      "label": "SVCMONITOR@CORP.THERESERVE.LOC",
+      "props": {
+        "sidhistory": {},
+        "unconstraineddelegation": false,
+        "pwdneverexpires": true,
+        "enabled": true,
+        "hasspn": true,
+        "trustedtoauth": false,
+        "admincount": false,
+        "whencreated": 1676452003,
+        "serviceprincipalnames": {
+          "0": "http/svcMonitor"
+        },
+        "lastlogontimestamp": -1,
+        "highvalue": false,
+        "passwordnotreqd": false,
+        "sensitive": false,
+        "domainsid": "S-1-5-21-170228521-1485475711-3199862024",
+        "samaccountname": "svcMonitor",
+        "owned": false,
+        "displayname": "svcMonitor",
+        "pwdlastset": 1676452003,
+        "domain": "CORP.THERESERVE.LOC",
+        "lastlogon": 0,
+        "name": "SVCMONITOR@CORP.THERESERVE.LOC",
+        "distinguishedname": "CN=SVCMONITOR,OU=SERVICES,DC=CORP,DC=THERESERVE,DC=LOC",
+        "objectid": "S-1-5-21-170228521-1485475711-3199862024-1985",
+        "dontreqpreauth": false
+      },
+      "glyphs": {},
+      "folded": {
+        "nodes": {},
+        "edges": {}
+      },
+      "x": 709.7002649062366,
+      "y": 372.8407632461087,
+      "objectid": "S-1-5-21-170228521-1485475711-3199862024-1985",
+      "notowned": true,
+      "highvalue": false,
+      "type_user": true,
+      "size": 1,
+      "degree": 0,
+      "icon": {
+        "font": "'Font Awesome 5 Free'",
+        "content": "",
+        "scale": 1.5,
+        "color": "#17E625"
+      },
+      "fa2_x": 1.8275405168533325,
+      "fa2_y": 1.3916566371917725,
+      "dn_x": null,
+      "dn_y": null,
+      "dn_size": 19.289712886816485,
+      "dn": null
+    },
+    {
+      "id": 896,
+      "type": "User",
+      "label": "SVCOCTOBER@CORP.THERESERVE.LOC",
+      "props": {
+        "sidhistory": {},
+        "unconstraineddelegation": false,
+        "pwdneverexpires": true,
+        "enabled": true,
+        "hasspn": true,
+        "trustedtoauth": false,
+        "admincount": false,
+        "whencreated": 1676452065,
+        "serviceprincipalnames": {
+          "0": "mssql/svcOctober"
+        },
+        "lastlogontimestamp": 1679691256,
+        "highvalue": false,
+        "passwordnotreqd": false,
+        "sensitive": false,
+        "domainsid": "S-1-5-21-170228521-1485475711-3199862024",
+        "samaccountname": "svcOctober",
+        "owned": false,
+        "displayname": "svcOctober",
+        "pwdlastset": 1676452065,
+        "domain": "CORP.THERESERVE.LOC",
+        "lastlogon": 1680215214,
+        "name": "SVCOCTOBER@CORP.THERESERVE.LOC",
+        "distinguishedname": "CN=SVCOCTOBER,OU=SERVICES,DC=CORP,DC=THERESERVE,DC=LOC",
+        "objectid": "S-1-5-21-170228521-1485475711-3199862024-1987",
+        "dontreqpreauth": false
+      },
+      "glyphs": {},
+      "folded": {
+        "nodes": {},
+        "edges": {}
+      },
+      "x": 657.3733972878493,
+      "y": 413.25060770342697,
+      "objectid": "S-1-5-21-170228521-1485475711-3199862024-1987",
+      "notowned": true,
+      "highvalue": false,
+      "type_user": true,
+      "size": 1,
+      "degree": 0,
+      "icon": {
+        "font": "'Font Awesome 5 Free'",
+        "content": "",
+        "scale": 1.5,
+        "color": "#17E625"
+      },
+      "fa2_x": -0.6006792783737183,
+      "fa2_y": 3.808823823928833,
+      "dn_x": null,
+      "dn_y": null,
+      "dn_size": 19.289712886816485,
+      "dn": null
+    }
+  ],
+  "edges": [],
+  "spotlight": {
+    "881": [
+      "KRBTGT@CORP.THERESERVE.LOC",
+      0,
+      "",
+      "User",
+      ""
+    ],
+    "892": [
+      "SVCBACKUPS@CORP.THERESERVE.LOC",
+      0,
+      "",
+      "User",
+      ""
+    ],
+    "893": [
+      "SVCEDR@CORP.THERESERVE.LOC",
+      0,
+      "",
+      "User",
+      ""
+    ],
+    "894": [
+      "SVCSCANNING@CORP.THERESERVE.LOC",
+      0,
+      "",
+      "User",
+      ""
+    ],
+    "895": [
+      "SVCMONITOR@CORP.THERESERVE.LOC",
+      0,
+      "",
+      "User",
+      ""
+    ],
+    "896": [
+      "SVCOCTOBER@CORP.THERESERVE.LOC",
+      0,
+      "",
+      "User",
+      ""
+    ]
+  }
+}

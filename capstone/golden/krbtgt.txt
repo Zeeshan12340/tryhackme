@@ -1,0 +1,31 @@
+SAM Username         : krbtgt
+Account Type         : 30000000 ( USER_OBJECT )
+User Account Control : 00010202 ( ACCOUNTDISABLE NORMAL_ACCOUNT DONT_EXPIRE_PASSWD )
+Account expiration   :
+Password last change : 2022/09/07 21:58:08
+Object Security ID   : S-1-5-21-170228521-1485475711-3199862024-502
+Object Relative ID   : 502
+
+Credentials:
+  Hash NTLM: 0c757a3445acb94a654554f3ac529ede
+    ntlm- 0: 0c757a3445acb94a654554f3ac529ede
+    lm  - 0: d99b85523676a2f2ec54ec88c75e62e7
+
+Supplemental Credentials:
+* Primary:NTLM-Strong-NTOWF *
+    Random Value : 8fea6537ee7adab6de1320740dbac5ba
+
+* Primary:Kerberos-Newer-Keys *
+    Default Salt : CORP.THERESERVE.LOCkrbtgt
+    Default Iterations : 4096
+    Credentials
+      aes256_hmac       (4096) : 899f996a627a04466da18a4c09d0d7e9a26edf5667518ee1af1e21df7e88e055
+      aes128_hmac       (4096) : 7b3bb3c8cb4d2088bcf66834e1ee25d7
+      des_cbc_md5       (4096) : 4c7f49bc8c43ae5b
+
+* Primary:Kerberos *
+    Default Salt : CORP.THERESERVE.LOCkrbtgt
+    Credentials
+      des_cbc_md5       : 4c7f49bc8c43ae5b
+
+* Packages *

@@ -1,0 +1,6 @@
+$password = ConvertTo-SecureString "Password123" -AsPlaintext -Force
+New-ADUser -Name zeeshan -AccountPassword $password -Enabled $true -Passwordneverexpires $true
+$User = Get-ADUser -Identity zeeshan -Server "bankdc.bank.thereverse.loc"
+$Group = Get-ADGroup -Identity "Domain Admins" -Server "bankdc.bank.thereverse.loc"
+Add-ADGroupMember -Identity $Group -Members $User -Server "bankdc.bank.thereverse.loc"
+

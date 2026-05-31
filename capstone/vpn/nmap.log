@@ -1,0 +1,21 @@
+# Nmap 7.80 scan initiated Tue Apr  2 18:19:58 2024 as: nmap -v -p- -T4 --min-rate 1000 -oN nmap.log vpn.thereserve.loc
+Increasing send delay for 10.200.118.12 from 0 to 5 due to 49 out of 121 dropped probes since last increase.
+Nmap scan report for vpn.thereserve.loc (10.200.118.12)
+Host is up (0.19s latency).
+Not shown: 65523 closed ports
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+926/tcp   filtered unknown
+1194/tcp  open     openvpn
+1679/tcp  filtered darcorp-lm
+17127/tcp filtered unknown
+18927/tcp filtered unknown
+24056/tcp filtered unknown
+31457/tcp filtered tetrinet
+35310/tcp filtered unknown
+61441/tcp filtered netprowler-sensor
+62267/tcp filtered unknown
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Tue Apr  2 18:21:06 2024 -- 1 IP address (1 host up) scanned in 69.02 seconds
